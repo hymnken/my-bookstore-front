@@ -1,7 +1,7 @@
 import { defineConfig, CommonServerOptions } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import fs from 'fs'
-import dotenv from 'dotenv'
+import dotenv,{DotenvParseOutput} from 'dotenv'
 // https://vitejs.dev/config/
 // export default defineConfig({
 //   plugins: [
@@ -16,7 +16,7 @@ export default defineConfig((mode) => {
   console.log('curEnvFileName: ', curEnvFileName);
   let server: CommonServerOptions = {}
   const envData = fs.readFileSync(curEnvFileName)
-  const envMap = dotenv.parse(envData)
+  const envMap: DotenvParseOutput = dotenv.parse(envData)
   if (mode.mode === "development") {
     server = {
       host: '127.0.0.1',
