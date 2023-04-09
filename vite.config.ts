@@ -20,7 +20,7 @@ export default defineConfig((mode) => {
   if (mode.mode === "development") {
     server = {
       host: '127.0.0.1',
-      port: 6324,
+      port: envMap.VITE_PORT,
       proxy: {
         '/zxy': {
           target: 'http://127.0.0.1/'
