@@ -19,11 +19,11 @@ export default defineConfig((mode) => {
   const envMap: DotenvParseOutput = dotenv.parse(envData)
   if (mode.mode === "development") {
     server = {
-      host: '127.0.0.1',
+      host:envMap.VITE_HOST,
       port: envMap.VITE_PORT,
       proxy: {
-        '/zxy': {
-          target: 'http://127.0.0.1/'
+        [envMap.VITE_BASE_URL]: {
+          target: envMap.VITE_PROXY_DOMAIN,
         }
       }
     }
