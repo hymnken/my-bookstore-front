@@ -1,8 +1,7 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
 import { LmgUtil } from './utils/imgUtil'
-
-LmgUtil.storageImgList()
-
+import { createApp } from 'vue'
+import App from './App.vue'
+console.log('环境变量:', import.meta.env.VITE_username)
+console.log('环境变量:', import.meta.env.VITE_age)
+LmgUtil.storageLmgList()
 createApp(App).mount('#app')
