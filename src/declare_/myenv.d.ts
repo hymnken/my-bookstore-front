@@ -5,6 +5,6 @@ declare module 'dotenv' {
         VITE_BASE_URL: string
         VITE_HOST: string
         VITE_PORT: number
-        VITE_PROXY_domain: string
+        VITE_PROXY_DOMAIN: string
     }
 }
